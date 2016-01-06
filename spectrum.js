@@ -1,5 +1,5 @@
-// Spectrum Colorpicker v1.8.0
-// https://github.com/bgrins/spectrum
+// Spectrum Colorpicker Poll Everywhere fork v1.9.0
+// https://github.com/polleverywhere/spectrum
 // Author: Brian Grinstead
 // License: MIT
 
@@ -711,7 +711,10 @@
         function get(opts) {
             opts = opts || { };
 
-            if (allowEmpty && isEmpty) {
+            // If the color is not set, then return null regardless of
+            // whether allowEmpty is set. Otherwise, we falsely return
+            // black as the color.
+            if (isEmpty) {
                 return null;
             }
 
@@ -759,7 +762,9 @@
             previewElement.removeClass("sp-clear-display");
             previewElement.css('background-color', 'transparent');
 
-            if (!realColor && allowEmpty) {
+            // Set it as Clear if there's no color set regardless of whether
+            // allowEmpty is set or not.
+            if (!realColor) {
                 // Update the replaced elements background with icon indicating no color selection
                 previewElement.addClass("sp-clear-display");
             }
@@ -1178,7 +1183,9 @@
 
         // Initializing a new instance of spectrum
         return this.spectrum("destroy").each(function () {
-            var options = $.extend({}, opts, $(this).data());
+            // Don't use data- options because it's prone to conflict
+            // since they are not namespaced at all.
+            var options = $.extend({}, opts);
             var spect = spectrum(this, options);
             $(this).data(dataID, spect.id);
         });

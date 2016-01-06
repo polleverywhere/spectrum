@@ -7,6 +7,11 @@ I wanted a colorpicker that didn't require images, and that had an API that made
 
 I started using canvas, then switched to CSS gradients, since it turned out to be easier to manage, and provided better cross browser support.
 
+### Poll Everywhere fork changes
+
+* Disable `data-` configuration in market to eliminate conflicts
+* Show Empty picker when no color is defined regardless of what `allowEmpty` is set to
+
 ### Basic Usage
 
 Head over to the [docs](http://bgrins.github.io/spectrum) for more information.  There is a visual demo of the different options hosted at: http://bgrins.github.io/spectrum.
