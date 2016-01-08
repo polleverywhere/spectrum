@@ -689,7 +689,9 @@
             }
 
             var newColor, newHsv;
-            if (!color && allowEmpty) {
+
+            // Set the picker as clear even if allowEmpty isn't allowed
+            if (!color) {
                 isEmpty = true;
             } else {
                 isEmpty = false;
