@@ -1,4 +1,4 @@
-// Spectrum Colorpicker Poll Everywhere fork v1.9.0
+// Spectrum Colorpicker Poll Everywhere fork v1.9.1
 // https://github.com/polleverywhere/spectrum
 // Author: Brian Grinstead
 // License: MIT
